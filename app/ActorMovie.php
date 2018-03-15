@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class ActorMovie extends Model
 {
+    public $table = 'actors_movies';
+
     /**
      * The attributes that are mass assignable.
      */
@@ -17,7 +19,7 @@ class ActorMovie extends Model
     /**
      * Timestamp attributes
      */
-    protected $timestamps = [
+    public $timestamps = [
         'created_at',
         'updated_at',
     ];

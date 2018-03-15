@@ -4,20 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserFavorites extends Model
+class Rating extends Model
 {
+    public $table = 'ratings';
+
     /**
      * The attributes that are mass assignable.
      */
     protected $fillable = [
-        'user_id',
         'movie_id',
+        'rating',
     ];
 
     /**
      * Timestamp attributes
      */
-    protected $timestamps = [
+    public $timestamps = [
         'created_at',
         'updated_at',
     ];

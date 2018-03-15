@@ -4,15 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Actor extends Model
+class UserFavorite extends Model
 {
-    public $table = 'actors';
+    public $table = 'user_favorites';
 
     /**
      * The attributes that are mass assignable.
      */
     protected $fillable = [
-        'name',
+        'user_id',
+        'movie_id',
     ];
 
     /**
