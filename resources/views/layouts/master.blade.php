@@ -36,8 +36,8 @@
           @endif
           <h5>My Account</h5>
           @if(Auth::check())
-            <a href="?" class="button">All Movies</a>
-            <a href="?filter=favs" class="button warning">Favorites</a>
+            <a href="{{ route('movie.list') }}" class="button">All Movies</a>
+            <a href="{{ route('movie.list') }}?filter=favs" class="button warning">Favorites</a>
             <form method="post" action="{{ route('auth.logout') }}">
               @csrf
               <input type="submit" class="button alert" value="Log out" />

@@ -4,9 +4,21 @@
   <table class="movie-list">
     <tr>
       <th></th>
-      <th>Title</th>
-      <th>Year</th>
-      <th>Rating</th>
+      <th>
+        <a href="?column=title&order={{ $column == 'title' && $order == 'asc' ? 'desc' : 'asc' }}" class="movie-sort">
+          Title
+        </a>
+      </th>
+      <th>
+        <a href="?column=release_date&order={{ $column == 'release_date' && $order == 'asc' ? 'desc' : 'asc' }}" class="movie-sort">
+          Year
+        </a>
+      </th>
+      <th>
+        <a href="?column=rating&order={{ $column == 'rating' && $order == 'asc' ? 'desc' : 'asc' }}" class="movie-sort">
+          Rating
+        </a>
+      </th>
     </tr>
     @foreach($movies as $movie)
       <tr>

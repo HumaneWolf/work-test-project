@@ -19,12 +19,6 @@ mix.scripts( // Vendor js
     ],
 'public/js/vendor.js'
 )
-.scripts( // App js
-    [
-        'resources/assets/js/app.js'
-    ],
-'public/js/app.js'
-)
 .styles( // Foundation framework CSS
     [
         'resources/assets/css/foundation.css'

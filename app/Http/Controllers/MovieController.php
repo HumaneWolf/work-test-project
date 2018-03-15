@@ -17,7 +17,7 @@ class MovieController extends Controller
         $column = 'id';
         $order = 'asc';
 
-        if (!is_null($request->column) && in_array($request->column, ['id', 'title', 'year'])) {
+        if (!is_null($request->column) && in_array($request->column, ['id', 'title', 'release_date'])) {
             $column = $request->column;
         }
         if (!is_null($request->order) && in_array($request->order, ['asc', 'desc'])) {
@@ -40,6 +40,8 @@ class MovieController extends Controller
 
         return view('movie.list',
             [
+                'column' => $column,
+                'order'  => $order,
                 'movies' => $movies,
             ]
         );
@@ -48,6 +50,11 @@ class MovieController extends Controller
     public function getDetails($movieId)
     {
         $movie = Movie::findOrFail($movieId);
-        return view('movie.home');
+        return view(
+            'movie.details',
+            [
+                'movie' => $movie,
+            ]
+        );
     }
 }

@@ -23,3 +23,12 @@
 .pagination {
   text-align: center;
 }
+.movie-sort {
+  color: black;
+}
+.movie-poster {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
