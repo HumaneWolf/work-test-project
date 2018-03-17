@@ -4,10 +4,20 @@
   <img src="{{ $movie->getPoster() }}" class="movie-poster" />
 
   <div class="callout">
-    
-  </div>
+    @if(Auth::check())
+      @if(Auth::user()->isFavorite($movie))
+        <form method="post" action="{{ route('movie.details', [ 'id' => $movie->id ]) }}">
+          @csrf
+          <input type="submit" class="button alert favorite" value="Remove Favorite"/>
+        </form>
+      @else
+        <form method="post" action="{{ route('movie.details', [ 'id' => $movie->id ]) }}">
+          @csrf
+          <input type="submit" class="button warning favorite" value="Add Favorite"/>
+        </form>
+      @endif
+    @endif
 
-  <div class="callout">
     <h5>{{ $movie->title }}</h5>
     @if($movie->original_title != null)
       <p><strong>Original Title:</strong> {{ $movie->original_title }}</p>

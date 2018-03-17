@@ -13,7 +13,7 @@ let mix = require('laravel-mix');
 
 mix.scripts( // Vendor js
     [
-        'resources/assets/js/vendor/jquery.js',         // Jquery
+        'resources/assets/js/vendor/jquery.js',         // Jquery, because the Foundation framework includes it.
         'resources/assets/js/vendor/foundation.js',     // Foundation
         'resources/assets/js/vendor/what-input.js',     // What input
     ],
